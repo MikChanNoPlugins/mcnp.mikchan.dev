@@ -1,6 +1,21 @@
 <template>
     <v-container>
         <v-row>
+            <v-col cols="auto">
+                <v-switch v-model="theme">
+                    <template #label>
+                        <v-icon
+                            :icon="
+                                is_dark_theme
+                                    ? 'mdi-moon-waning-crescent'
+                                    : 'mdi-white-balance-sunny'
+                            "
+                        />
+                    </template>
+                </v-switch>
+            </v-col>
+        </v-row>
+        <v-row>
             <v-spacer />
             <v-col cols="4">
                 <v-card
@@ -16,3 +31,25 @@
         </v-row>
     </v-container>
 </template>
+
+<script setup lang="ts">
+import { computed } from "@vue/reactivity";
+import { DeepReadonly, inject, readonly, ref, Ref } from "vue";
+
+const { is_dark_theme, switch_theme } = inject<{
+    is_dark_theme: DeepReadonly<Ref<boolean>>;
+    switch_theme: (val: boolean) => void;
+}>("theme", {
+    is_dark_theme: readonly(ref(false)),
+    switch_theme: () => {
+        return;
+    },
+});
+
+const theme = computed({
+    get() {
+        return is_dark_theme.value;
+    },
+    set: switch_theme,
+});
+</script>

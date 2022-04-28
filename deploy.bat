@@ -1,5 +1,3 @@
-yarn build
-
 cd dist
 
 git init
