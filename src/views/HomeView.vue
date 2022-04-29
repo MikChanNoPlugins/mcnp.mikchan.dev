@@ -14,6 +14,17 @@
                     </template>
                 </v-switch>
             </v-col>
+
+            <v-spacer />
+
+            <v-col cols="auto">
+                <v-select
+                    v-model="locale"
+                    :items="locale_items"
+                    :label="t('language')"
+                    dense
+                />
+            </v-col>
         </v-row>
         <under-construction-row />
     </v-container>
@@ -29,10 +40,16 @@ import {
     ref,
     defineAsyncComponent,
 } from "vue";
+import { useI18n } from "vue-i18n";
 
 const UnderConstructionRow = defineAsyncComponent(
     () => import("@/components/UnderConstructionRow.vue")
 );
+
+const { locale } = useI18n({ useScope: "global" });
+const { t } = useI18n({ useScope: "local" });
+
+const locale_items = ["en", "ru", "uk"];
 
 const { is_dark_theme, switch_theme } = inject<{
     is_dark_theme: DeepReadonly<Ref<boolean>>;
@@ -53,3 +70,13 @@ const theme = computed({
     },
 });
 </script>
+
+<i18n lang="yaml" locale="en">
+language: Language
+</i18n>
+<i18n lang="yaml" locale="ru">
+language: Язык
+</i18n>
+<i18n lang="yaml" locale="uk">
+language: Мова
+</i18n>
