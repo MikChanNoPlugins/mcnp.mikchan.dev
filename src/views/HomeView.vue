@@ -15,26 +15,24 @@
                 </v-switch>
             </v-col>
         </v-row>
-        <v-row>
-            <v-spacer />
-            <v-col cols="4">
-                <v-card
-                    :loading="true"
-                    contained-text
-                    prepend-icon="mdi-hard-hat"
-                >
-                    <template #title> Under Construction </template>
-                    <v-card-text> Nothing here yet... </v-card-text>
-                </v-card>
-            </v-col>
-            <v-spacer />
-        </v-row>
+        <under-construction-row />
     </v-container>
 </template>
 
 <script setup lang="ts">
 import { computed } from "@vue/reactivity";
-import { DeepReadonly, Ref, inject, readonly, ref } from "vue";
+import {
+    DeepReadonly,
+    Ref,
+    inject,
+    readonly,
+    ref,
+    defineAsyncComponent,
+} from "vue";
+
+const UnderConstructionRow = defineAsyncComponent(
+    () => import("@/components/UnderConstructionRow.vue")
+);
 
 const { is_dark_theme, switch_theme } = inject<{
     is_dark_theme: DeepReadonly<Ref<boolean>>;
