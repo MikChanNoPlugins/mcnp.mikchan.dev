@@ -9,7 +9,6 @@
         "deploy-win": "vue-cli-service build && deploy.bat"
     },
     "dependencies": {
-        "@mdi/font": "5.9.55",
         "core-js": "^3.8.3",
         "roboto-fontface": "*",
         "vue": "^3.2.13",
@@ -21,6 +20,7 @@
     },
     "devDependencies": {
         "@intlify/vue-i18n-loader": "^5.0.0",
+        "@mdi/js": "^6.6.96",
         "@types/webfontloader": "^1.0.0",
         "@typescript-eslint/eslint-plugin": "^5.4.0",
         "@typescript-eslint/parser": "^5.4.0",

@@ -1,5 +1,6 @@
 <template>
     <v-app :theme="theme">
+        <app-bar />
         <v-main>
             <router-view />
         </v-main>
@@ -7,7 +8,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed, provide, ref, readonly } from "vue";
+import { computed, provide, ref, readonly, defineAsyncComponent } from "vue";
+
+const AppBar = defineAsyncComponent(() => import("@/components/AppBar.vue"));
 
 const is_dark_theme = ref(true);
 const theme = computed(() => (is_dark_theme.value ? "dark" : "light"));
