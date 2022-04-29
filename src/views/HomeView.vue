@@ -34,7 +34,7 @@
 
 <script setup lang="ts">
 import { computed } from "@vue/reactivity";
-import { DeepReadonly, inject, readonly, ref, Ref } from "vue";
+import { DeepReadonly, Ref, inject, readonly, ref } from "vue";
 
 const { is_dark_theme, switch_theme } = inject<{
     is_dark_theme: DeepReadonly<Ref<boolean>>;
@@ -48,8 +48,10 @@ const { is_dark_theme, switch_theme } = inject<{
 
 const theme = computed({
     get() {
-        return is_dark_theme.value;
+        return !is_dark_theme.value;
     },
-    set: switch_theme,
+    set(val: boolean) {
+        switch_theme(!val);
+    },
 });
 </script>
