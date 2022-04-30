@@ -11,9 +11,13 @@ const messages = {
     uk: { $vuetify: vuetify_uk },
 };
 
+const locales: ("en" | "ru" | "uk")[] = ["en", "ru", "uk"];
+const sessionLocale = sessionStorage.getItem("locale");
+const locale = locales.find((locale) => locale == sessionLocale) ?? "en";
+
 const i18n = createI18n({
     legacy: false,
-    locale: "en",
+    locale,
     fallbackLocale: "en",
     messages,
 });
