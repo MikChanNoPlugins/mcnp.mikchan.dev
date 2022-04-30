@@ -1,7 +1,16 @@
 <template>
     <v-menu anchor="start">
-        <template #activator="{ props }">
-            <v-btn v-bind="props" :icon="mdiThemeLightDark" />
+        <template #activator="{ props: menuProps }">
+            <v-tooltip anchor="bottom">
+                <template #activator="{ props: tooltipProps }">
+                    <v-btn
+                        v-bind="{ ...menuProps, ...tooltipProps }"
+                        :icon="mdiThemeLightDark"
+                    />
+                </template>
+
+                <span>{{ t("theme") }}</span>
+            </v-tooltip>
         </template>
 
         <v-list>

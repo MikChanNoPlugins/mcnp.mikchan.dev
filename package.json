@@ -9,6 +9,7 @@
         "deploy-win": "vue-cli-service build && deploy.bat"
     },
     "dependencies": {
+        "@fortawesome/free-brands-svg-icons": "^6.1.1",
         "core-js": "^3.8.3",
         "roboto-fontface": "*",
         "vue": "^3.2.13",
@@ -19,6 +20,9 @@
         "webfontloader": "^1.0.0"
     },
     "devDependencies": {
+        "@fortawesome/fontawesome-svg-core": "^6.1.1",
+        "@fortawesome/free-solid-svg-icons": "^6.1.1",
+        "@fortawesome/vue-fontawesome": "3.0.0-5",
         "@intlify/vue-i18n-loader": "^5.0.0",
         "@mdi/js": "^6.6.96",
         "@types/webfontloader": "^1.0.0",

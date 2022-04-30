@@ -1,7 +1,16 @@
 <template>
     <v-menu anchor="start">
-        <template #activator="{ props }">
-            <v-btn :icon="mdiTranslate" v-bind="props" />
+        <template #activator="{ props: menuProps }">
+            <v-tooltip anchor="bottom">
+                <template #activator="{ props: tooltipProps }">
+                    <v-btn
+                        :icon="mdiTranslate"
+                        v-bind="{ ...menuProps, ...tooltipProps }"
+                    />
+                </template>
+
+                <span>{{ t("language") }}</span>
+            </v-tooltip>
         </template>
 
         <v-list>

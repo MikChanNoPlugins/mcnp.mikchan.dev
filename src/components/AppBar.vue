@@ -8,6 +8,8 @@
 
         <v-spacer />
 
+        <!-- <v-btn icon="fa:fab fa-vk" /> -->
+
         <github-button />
         <light-switch />
         <language-switch />

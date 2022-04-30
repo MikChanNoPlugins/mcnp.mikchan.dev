@@ -1,5 +1,11 @@
 <template>
-    <v-btn :icon="mdiGithub" @click="goToGithub" />
+    <v-tooltip anchor="bottom">
+        <template #activator="{ props }">
+            <v-btn :icon="mdiGithub" @click="goToGithub" v-bind="props" />
+        </template>
+
+        <span>GitHub</span>
+    </v-tooltip>
 </template>
 
 <script setup lang="ts">
