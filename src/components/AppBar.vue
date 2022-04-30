@@ -8,7 +8,7 @@
 
         <v-spacer />
 
-        <v-btn :icon="mdiGithub" @click="goToGithub" />
+        <github-button />
         <light-switch />
         <language-switch />
     </v-app-bar>
@@ -25,6 +25,7 @@ const LanguageSwitch = defineAsyncComponent(
     () => import("@/components/LanguageSwitch.vue")
 );
 
-const goToGithub = () =>
-    (window.open('https://github.com/MikChanNoPlugins', '_blank')?.focus());
+const GithubButton = defineAsyncComponent(
+    () => import("@/components/GithubButton.vue")
+);
 </script>
