@@ -16,7 +16,6 @@
 
 <script setup lang="ts">
 import { defineAsyncComponent } from "vue";
-import { mdiGithub } from "@mdi/js";
 
 const LightSwitch = defineAsyncComponent(
     () => import("@/components/LightSwitch.vue")
@@ -24,7 +23,6 @@ const LightSwitch = defineAsyncComponent(
 const LanguageSwitch = defineAsyncComponent(
     () => import("@/components/LanguageSwitch.vue")
 );
-
 const GithubButton = defineAsyncComponent(
     () => import("@/components/GithubButton.vue")
 );
