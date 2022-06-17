@@ -1,10 +1,5 @@
 <template>
-    <v-app :theme="theme">
-        <app-bar />
-        <v-main>
-            <router-view />
-        </v-main>
-    </v-app>
+    <h1> Test </h1>
 </template>
 
 <script setup lang="ts">
