@@ -1,3 +1,0 @@
-# Website
-
-A website repository

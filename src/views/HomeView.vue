@@ -5,9 +5,5 @@
 </template>
 
 <script setup lang="ts">
-import { defineAsyncComponent } from "vue";
-
-const UnderConstructionRow = defineAsyncComponent(
-    () => import("@/components/UnderConstructionRow.vue")
-);
+import UnderConstructionRow from "../components/UnderConstructionRow.vue";
 </script>

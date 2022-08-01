@@ -18,17 +18,14 @@ import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 </script>
 
-<i18n lang="yaml" locale="en">
-under-construction: Under Construction
-nothing-here-yet: Nothing here yet...
-</i18n>
-
-<i18n lang="yaml" locale="ru">
-under-construction: В Разработке
-nothing-here-yet: Тут пока ничего нет...
-</i18n>
-
-<i18n lang="yaml" locale="uk">
-under-construction: Здійснюється Розробка
-nothing-here-yet: Тут поки що нічого немає...
+<i18n lang="yaml">
+en:
+    under-construction: Under Construction
+    nothing-here-yet: Nothing here yet...
+ru:
+    under-construction: В Разработке
+    nothing-here-yet: Тут пока ничего нет...
+uk:
+    under-construction: Здійснюється Розробка
+    nothing-here-yet: Тут поки що нічого немає...
 </i18n>
