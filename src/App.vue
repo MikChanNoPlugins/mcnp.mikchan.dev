@@ -1,15 +1,18 @@
 <template>
     <v-app :theme="theme">
         <app-bar />
-        <v-main>
-            <router-view />
-        </v-main>
+        <v-parallax :src="background">
+            <v-main>
+                <router-view />
+            </v-main>
+        </v-parallax>
     </v-app>
 </template>
 
 <script setup lang="ts">
 import { computed, provide, ref } from "vue";
 import AppBar from "./components/AppBar.vue";
+import background from "@/assets/background.jpg";
 
 const isDarkTheme = ref(sessionStorage.getItem("is_dark_theme") !== "0");
 const theme = computed(() => (isDarkTheme.value ? "dark" : "light"));
