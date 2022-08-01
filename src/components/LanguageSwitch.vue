@@ -47,7 +47,7 @@ const flagUrl = (locale: string) => {
 
 <i18n lang="yml">
 en:
-    language: Язык
+    language: Language
     languageName: English
     flag: us
 ru:
