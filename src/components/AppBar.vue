@@ -9,9 +9,11 @@
         <v-spacer />
 
         <github-button />
+        <theme-switch />
     </v-app-bar>
 </template>
 
 <script setup lang="ts">
 import GithubButton from "./GithubButton.vue";
+import ThemeSwitch from "./ThemeSwitch.vue";
 </script>
