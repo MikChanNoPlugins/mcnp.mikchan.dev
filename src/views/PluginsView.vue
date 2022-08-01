@@ -31,7 +31,7 @@
 import { reactive } from "vue";
 import { useI18n } from "../plugins/i18n";
 
-const longArray = reactive([...new Array(50)].map((_, idx) => idx + 1));
+const longArray = reactive([...new Array(20)].map((_, idx) => idx + 1));
 
 const { t } = useI18n();
 </script>
