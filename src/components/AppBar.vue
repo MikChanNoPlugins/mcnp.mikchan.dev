@@ -2,7 +2,7 @@
     <v-app-bar>
         <v-app-bar-title>
             <router-link :to="{ name: 'home' }">
-                ミックちゃんのPlugins
+                MikChanのPlugins
             </router-link>
         </v-app-bar-title>
 
