@@ -7,6 +7,11 @@ const routes: Array<RouteRecordRaw> = [
         name: "home",
         component: () => import("../../views/HomeView.vue"),
     },
+    {
+        path: "/plugins",
+        name: "plugins",
+        component: () => import("../../views/PluginsView.vue"),
+    },
 ];
 
 const router = createRouter({
