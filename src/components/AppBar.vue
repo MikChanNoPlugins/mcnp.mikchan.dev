@@ -9,6 +9,7 @@
         <v-spacer />
 
         <github-button />
+        <vk-button />
         <theme-switch />
         <language-switch />
     </v-app-bar>
@@ -16,6 +17,7 @@
 
 <script setup lang="ts">
 import GithubButton from "./GithubButton.vue";
+import VkButton from "./VkButton.vue";
 import ThemeSwitch from "./ThemeSwitch.vue";
 import LanguageSwitch from "./LanguageSwitch.vue";
 </script>

@@ -4,6 +4,7 @@ specifiers:
   '@fortawesome/fontawesome-svg-core': ^6.1.2
   '@fortawesome/free-brands-svg-icons': ^6.1.2
   '@fortawesome/free-solid-svg-icons': ^6.1.2
+  '@fortawesome/vue-fontawesome': ^3.0.1
   '@intlify/vite-plugin-vue-i18n': ^5.0.1
   '@mdi/js': ^7.0.96
   '@types/node': ^18.6.3
@@ -26,6 +27,7 @@ devDependencies:
   '@fortawesome/fontawesome-svg-core': 6.1.2
   '@fortawesome/free-brands-svg-icons': 6.1.2
   '@fortawesome/free-solid-svg-icons': 6.1.2
+  '@fortawesome/vue-fontawesome': 3.0.1_sqiqa7hvpgqdakjrbqzbqxvzme
   '@intlify/vite-plugin-vue-i18n': 5.0.1_vite@3.0.4+vue-i18n@9.1.10
   '@mdi/js': 7.0.96
   '@types/node': 18.6.3
@@ -82,6 +84,16 @@ packages:
     requiresBuild: true
     dependencies:
       '@fortawesome/fontawesome-common-types': 6.1.2
+    dev: true
+
+  /@fortawesome/vue-fontawesome/3.0.1_sqiqa7hvpgqdakjrbqzbqxvzme:
+    resolution: {integrity: sha512-CdXZJoCS+aEPec26ZP7hWWU3SaJlQPZSCGdgpQ2qGl2HUmtUUNrI3zC4XWdn1JUmh3t5OuDeRG1qB4eGRNSD4A==}
+    peerDependencies:
+      '@fortawesome/fontawesome-svg-core': ~1 || ~6
+      vue: '>= 3.0.0 < 4'
+    dependencies:
+      '@fortawesome/fontawesome-svg-core': 6.1.2
+      vue: 3.2.37
     dev: true
 
   /@intlify/bundle-utils/3.1.0_vue-i18n@9.1.10:
