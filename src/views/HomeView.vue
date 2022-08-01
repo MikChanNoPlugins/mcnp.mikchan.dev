@@ -1,13 +1,3 @@
 <template>
-    <v-container>
-        <under-construction-row />
-    </v-container>
+    <h1>Home view</h1>
 </template>
-
-<script setup lang="ts">
-import { defineAsyncComponent } from "vue";
-
-const UnderConstructionRow = defineAsyncComponent(
-    () => import("@/components/UnderConstructionRow.vue")
-);
-</script>
