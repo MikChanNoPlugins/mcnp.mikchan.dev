@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, provide, ref, watch } from "vue";
+import { computed, provide, ref } from "vue";
 import AppBar from "./components/AppBar.vue";
 
 const isDarkTheme = ref(sessionStorage.getItem("is_dark_theme") !== "0");
