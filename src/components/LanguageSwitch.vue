@@ -23,8 +23,12 @@
                 :key="`locale_${locale}`"
                 :active="globalLocale === locale"
                 @click="setLocale(locale)"
-                :prepend-avatar="flagUrl(locale)"
             >
+                <template #prepend>
+                    <v-avatar>
+                        <v-img aspect-ratio="1" cover :src="flagUrl(locale)" />
+                    </v-avatar>
+                </template>
                 <v-list-item-title>
                     {{ t("languageName", 1, { locale }) }}
                 </v-list-item-title>
