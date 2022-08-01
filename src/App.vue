@@ -1,5 +1,6 @@
 <template>
     <v-app :theme="theme">
+        <system-bar />
         <app-bar />
         <v-parallax :src="background">
             <v-main>
@@ -14,6 +15,7 @@ import { computed, provide, ref } from "vue";
 import AppBar from "./components/AppBar.vue";
 import backgroundDark from "@/assets/background-dark.jpg";
 import backgroundLight from "@/assets/background-light.jpg";
+import SystemBar from "./components/SystemBar.vue";
 
 const isDarkTheme = ref(sessionStorage.getItem("is_dark_theme") !== "0");
 const theme = computed(() => (isDarkTheme.value ? "dark" : "light"));
