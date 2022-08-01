@@ -1,7 +1,27 @@
+<style scoped>
+.router-link,
+.router-link:visited,
+.router-link:hover,
+.router-link:active {
+    text-decoration: none;
+    color: inherit;
+
+    font-size: 1.5rem;
+}
+</style>
+
 <template>
     <v-app-bar app fixed>
         <v-app-bar-title>
-            <router-link :to="{ name: 'home' }"> MikChanのPlugins </router-link>
+            <router-link class="router-link" :to="{ name: 'home' }">
+                <v-avatar>
+                    <v-img
+                        src="https://avatars.githubusercontent.com/u/95277452?s=400&u=c7df72b1e36ed44ae2abbfcb2c33d1bcee92c7e8&v=4"
+                    />
+                </v-avatar>
+
+                MikChanのPlugins
+            </router-link>
         </v-app-bar-title>
 
         <v-spacer />
