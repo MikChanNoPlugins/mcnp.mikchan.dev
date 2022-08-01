@@ -20,15 +20,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watchEffect } from "vue";
 import { useAnimeQuote } from "../hooks/useAnimeQuote";
+import { useTime } from "../hooks/useTime";
 
 const { quote } = useAnimeQuote();
-
-const time = ref(new Date().toLocaleString());
-
-watchEffect(() => {
-    time.value;
-    setTimeout(() => (time.value = new Date().toLocaleString()), 1000);
-});
+const { time } = useTime();
 </script>
