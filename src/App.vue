@@ -1,16 +1,18 @@
 <template>
-    <div>
-        <div>{{ t("test") }}</div>
-        <div>
-            <button
-                v-for="(locale, idx) in availableLocales"
-                :key="idx"
-                @click="onClick(locale)"
-            >
-                {{ locale }}
-            </button>
-        </div>
-    </div>
+    <v-container>
+        <v-row>
+            <v-spacer />
+            <v-col cols="auto">{{ t("test") }} </v-col>
+            <v-spacer />
+        </v-row>
+        <v-row>
+            <v-spacer />
+            <v-col cols="auto" v-for="locale in availableLocales" :key="locale">
+                <v-btn @click="onClick(locale)">{{ locale }}</v-btn>
+            </v-col>
+            <v-spacer />
+        </v-row>
+    </v-container>
 </template>
 
 <script setup lang="ts">
@@ -25,14 +27,11 @@ const onClick = (locale: string) => {
 };
 </script>
 
-<i18n lang="yml" locale="en">
-test: Test
-</i18n>
-
-<i18n lang="yml" locale="ru">
-test: Тест
-</i18n>
-
-<i18n lang="yml" locale="jp">
-test: 試し
+<i18n lang="yml">
+en:
+    test: Test
+ru:
+    test: Тест
+jp:
+    test: 試し
 </i18n>
