@@ -6,11 +6,15 @@ const useAnimeQuote = () => {
 
     watchEffect(() => {
         (async () => {
-            const { anime, character, quote } = await Random();
-            const fullQuote = `[${anime}] ${character}: ${quote}`;
+            try {
+                const { anime, character, quote } = await Random();
+                const fullQuote = `[${anime}] ${character}: ${quote}`;
 
-            sessionStorage.setItem("anime-quote", fullQuote);
-            result.value = fullQuote;
+                sessionStorage.setItem("anime-quote", fullQuote);
+                result.value = fullQuote;
+            } catch (error) {
+                console.warn("No ranom quote");
+            }
         })();
     });
 
