@@ -2,12 +2,15 @@ import { ref, watchEffect } from "vue";
 import { Random } from "animechan.js";
 
 const useAnimeQuote = () => {
-    const result = ref<string>("...");
+    const result = ref<string>(sessionStorage.getItem("anime-quote") ?? "...");
 
     watchEffect(() => {
         (async () => {
             const { anime, character, quote } = await Random();
-            result.value = `[${anime}] ${character}: ${quote}`;
+            const fullQuote = `[${anime}] ${character}: ${quote}`;
+
+            sessionStorage.setItem("anime-quote", fullQuote);
+            result.value = fullQuote;
         })();
     });
 
