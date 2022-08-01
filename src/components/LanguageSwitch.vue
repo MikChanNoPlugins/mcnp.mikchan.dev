@@ -9,7 +9,7 @@
                     />
                 </template>
 
-                <span>{{ t("language") }}</span>
+                <span>{{ t("language", 1, { locale: tooltipLocale }) }}</span>
             </v-tooltip>
         </template>
 
@@ -28,6 +28,9 @@
                 <v-list-item-title>
                     {{ t("languageName", 1, { locale }) }}
                 </v-list-item-title>
+                <v-list-item-subtitle>
+                    {{ t("enLanguageName", 1, { locale }) }}
+                </v-list-item-subtitle>
             </v-list-item>
         </v-list>
     </v-menu>
@@ -35,6 +38,7 @@
 
 <script setup lang="ts">
 import { mdiTranslate } from "@mdi/js";
+import { computed, ref, watchEffect } from "vue";
 import { useI18n } from "../plugins/i18n";
 
 const { locale: globalLocale, setLocale } = useI18n({ useScope: "global" });
@@ -43,19 +47,33 @@ const { t, availableLocales } = useI18n();
 const flagUrl = (locale: string) => {
     return `https://countryflagsapi.com/svg/${t("flag", 1, { locale })}`;
 };
+
+const localesSize = computed(() => availableLocales.length);
+const localeId = ref(0);
+const tooltipLocale = computed(() => availableLocales[localeId.value]);
+
+watchEffect(() => {
+    localeId.value;
+    setTimeout(() => {
+        localeId.value = (localeId.value + 1) % localesSize.value;
+    }, 2500);
+});
 </script>
 
 <i18n lang="yaml">
 en:
     language: Language
     languageName: English
+    enLanguageName: English
     flag: us
 ru:
     language: Язык
     languageName: Русский
+    enLanguageName: Russian
     flag: ru
 uk:
     language: Мова
     languageName: Українська
+    enLanguageName: Ukrainian
     flag: ua
 </i18n>

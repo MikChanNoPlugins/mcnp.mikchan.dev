@@ -1,9 +1,7 @@
 <template>
-    <v-app-bar>
+    <v-app-bar app fixed>
         <v-app-bar-title>
-            <router-link :to="{ name: 'home' }">
-                MikChanのPlugins
-            </router-link>
+            <router-link :to="{ name: 'home' }"> MikChanのPlugins </router-link>
         </v-app-bar-title>
 
         <v-spacer />
