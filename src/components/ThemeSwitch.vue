@@ -59,7 +59,7 @@ const { isDarkTheme, switchTheme } = inject<{
 });
 </script>
 
-<i18n lang="yml">
+<i18n lang="yaml">
 en:
     theme: Theme
     light: Light

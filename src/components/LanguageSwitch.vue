@@ -45,7 +45,7 @@ const flagUrl = (locale: string) => {
 };
 </script>
 
-<i18n lang="yml">
+<i18n lang="yaml">
 en:
     language: Language
     languageName: English
