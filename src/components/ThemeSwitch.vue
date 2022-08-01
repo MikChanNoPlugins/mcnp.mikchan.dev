@@ -64,4 +64,12 @@ en:
     theme: Theme
     light: Light
     dark: Dark
+ru:
+    theme: Тема
+    light: Светлая
+    dark: Темная
+uk:
+    theme: Тема
+    light: Світла
+    dark: Темна
 </i18n>

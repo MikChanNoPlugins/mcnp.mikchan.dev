@@ -10,10 +10,12 @@
 
         <github-button />
         <theme-switch />
+        <language-switch />
     </v-app-bar>
 </template>
 
 <script setup lang="ts">
 import GithubButton from "./GithubButton.vue";
 import ThemeSwitch from "./ThemeSwitch.vue";
+import LanguageSwitch from "./LanguageSwitch.vue";
 </script>
