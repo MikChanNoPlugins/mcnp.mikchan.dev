@@ -1,5 +1,10 @@
 <template>
-    <v-app :theme="theme" :style="appStyle">
+    <v-app
+        :theme="theme"
+        :style="{
+            background: `url(${background})`,
+        }"
+    >
         <system-bar />
         <app-bar />
         <v-main>
@@ -20,9 +25,6 @@ const theme = computed(() => (isDarkTheme.value ? "dark" : "light"));
 const background = computed(() =>
     isDarkTheme.value ? backgroundDark : backgroundLight
 );
-const appStyle = computed(() => ({
-    background: `url(${background})`,
-}));
 function switchTheme(val: boolean) {
     isDarkTheme.value = val;
     sessionStorage.setItem("is_dark_theme", isDarkTheme.value ? "1" : "0");
