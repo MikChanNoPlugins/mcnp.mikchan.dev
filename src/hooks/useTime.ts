@@ -1,4 +1,4 @@
-import { computed, ref, watchEffect } from "vue";
+import { readonly, ref, watchEffect } from "vue";
 
 const useTime = () => {
     const time = ref(new Date().toLocaleString());
@@ -8,7 +8,7 @@ const useTime = () => {
         setTimeout(() => (time.value = new Date().toLocaleString()), 1000);
     });
 
-    const constTime = computed(() => time.value);
+    const constTime = readonly(time);
 
     return { time: constTime };
 };
