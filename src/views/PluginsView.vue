@@ -1,32 +1,24 @@
 <template>
     <v-container class="container">
-        <v-row>
-            <v-col cols="auto">
-                <v-card>
-                    <v-card-text>
-                        <h1>
-                            {{ t("plugins") }}
-                        </h1>
-                    </v-card-text>
-                </v-card>
-            </v-col>
-        </v-row>
+        <row-title>
+            {{ t("plugins") }}
+        </row-title>
 
-        <v-row>
-            <v-col v-for="data in cleanData" :key="data.id" cols="12" sm="6" md="4">
-                <v-card>
-                    <v-card-title>
-                        <router-link
-                            :to="{
-                                name: 'plugin',
-                                params: { name: data.name.toLowerCase() },
-                            }"
-                        >
-                            {{ data.name }}
-                        </router-link>
-                    </v-card-title>
-                    <v-card-text> Sample text </v-card-text>
-                </v-card>
+        <row-loading v-if="status === 'loading'" />
+
+        <row-error v-if="status === 'notFound'">
+            {{ t("not-found") }}
+        </row-error>
+
+        <v-row v-if="status === 'found'">
+            <v-col
+                v-for="data in cleanData"
+                :key="data.id"
+                cols="12"
+                sm="6"
+                md="4"
+            >
+                <plugin-list-card :data="data" />
             </v-col>
         </v-row>
     </v-container>
@@ -36,22 +28,32 @@
 import { computed } from "vue";
 import { useGithubRepos } from "../hooks/useGithubRepos";
 import { useI18n } from "../plugins/i18n";
+import RowTitle from "../components/RowTitle.vue";
+import RowError from "../components/RowError.vue";
+import RowLoading from "../components/RowLoading.vue";
+import PluginListCard from "../components/PluginListCard.vue";
 
 const { t } = useI18n();
 
-const { data: githubData } = useGithubRepos("MikChanNoPlugins");
+const { reposData } = useGithubRepos("MikChanNoPlugins");
+const githubData = computed(() => reposData.value.reposData ?? []);
+const status = computed(() => reposData.value.status);
+
 const cleanData = computed(() =>
     githubData.value
         .filter((d) => d.topics?.includes("spigot-plugin"))
-        .sort((b, a) => (a.stargazers_count ?? 0) - (b.stargazers_count ?? 0))
+        .sort((b, a) => a.stargazers_count - b.stargazers_count)
 );
 </script>
 
 <i18n lang="yaml">
 en:
     plugins: Plugins
+    not-found: Nothing was found.
 ru:
     plugins: Плагины
+    not-found: Ничего не найдено.
 uk:
     plugins: Плагіни
+    not-found: Нічого не знайдено.
 </i18n>
