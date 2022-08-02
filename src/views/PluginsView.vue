@@ -13,14 +13,12 @@
         </v-row>
 
         <v-row>
-            <v-col
-                v-for="(item, idx) in longArray"
-                cols="4"
-                :key="`card_${idx}`"
-            >
+            <v-col v-for="data in cleanData" :key="data.id" sm="6" md="4">
                 <v-card>
-                    <v-card-title> Test Title {{ item }} </v-card-title>
-                    <v-card-text> Test Body {{ item }} </v-card-text>
+                    <v-card-title>{{ data.name }}</v-card-title>
+                    <v-card-text>
+                        {{ data }}
+                    </v-card-text>
                 </v-card>
             </v-col>
         </v-row>
@@ -28,12 +26,18 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from "vue";
+import { computed } from "vue";
+import { useGithubRepos } from "../hooks/useGithubRepos";
 import { useI18n } from "../plugins/i18n";
 
-const longArray = reactive([...new Array(20)].map((_, idx) => idx + 1));
-
 const { t } = useI18n();
+
+const { data: githubData } = useGithubRepos("MikChanNoPlugins");
+const cleanData = computed(() =>
+    githubData.value
+        .filter((d) => d.topics?.includes("spigot-plugin"))
+        .sort((b, a) => (a.stargazers_count ?? 0) - (b.stargazers_count ?? 0))
+);
 </script>
 
 <i18n lang="yaml">

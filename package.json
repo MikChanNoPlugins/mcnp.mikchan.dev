@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@octokit/rest": "^19.0.3",
     "animechan.js": "^1.0.1",
     "vue": "^3.2.37",
     "vue-i18n": "9",
@@ -24,6 +25,7 @@
     "@mdi/js": "^7.0.96",
     "@types/node": "^18.6.3",
     "@vitejs/plugin-vue": "^3.0.0",
+    "isomorphic-fetch": "^3.0.0",
     "typescript": "^4.6.4",
     "vite": "^3.0.0",
     "vite-plugin-pwa": "^0.12.3",
