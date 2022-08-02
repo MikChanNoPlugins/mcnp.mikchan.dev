@@ -5,12 +5,17 @@ const routes: Array<RouteRecordRaw> = [
         path: "/",
         alias: "/home",
         name: "home",
-        component: () => import("../../views/HomeView.vue"),
+        component: () => import("@/views/HomeView.vue"),
     },
     {
         path: "/plugins",
         name: "plugins",
-        component: () => import("../../views/PluginsView.vue"),
+        component: () => import("@/views/PluginsView.vue"),
+    },
+    {
+        path: "/plugins/:name",
+        name: "plugin",
+        component: () => import("@/views/PluginView.vue"),
     },
 ];
 
