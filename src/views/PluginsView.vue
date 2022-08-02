@@ -13,12 +13,19 @@
         </v-row>
 
         <v-row>
-            <v-col v-for="data in cleanData" :key="data.id" sm="6" md="4">
+            <v-col v-for="data in cleanData" :key="data.id" cols="12" sm="6" md="4">
                 <v-card>
-                    <v-card-title>{{ data.name }}</v-card-title>
-                    <v-card-text>
-                        {{ data }}
-                    </v-card-text>
+                    <v-card-title>
+                        <router-link
+                            :to="{
+                                name: 'plugin',
+                                params: { name: data.name.toLowerCase() },
+                            }"
+                        >
+                            {{ data.name }}
+                        </router-link>
+                    </v-card-title>
+                    <v-card-text> Sample text </v-card-text>
                 </v-card>
             </v-col>
         </v-row>
