@@ -1,20 +1,18 @@
 <template>
-    <v-app :theme="theme">
+    <v-app :theme="theme" :style="appStyle">
         <system-bar />
         <app-bar />
-        <v-parallax :src="background">
-            <v-main>
-                <router-view />
-            </v-main>
-        </v-parallax>
+        <v-main>
+            <router-view />
+        </v-main>
     </v-app>
 </template>
 
 <script setup lang="ts">
 import { computed, provide, ref } from "vue";
 import AppBar from "./components/AppBar.vue";
-import backgroundDark from "@/assets/background-dark.jpg";
-import backgroundLight from "@/assets/background-light.jpg";
+import backgroundDark from "@/assets/bg-test.jpg";
+import backgroundLight from "@/assets/light-bg-test.jpg";
 import SystemBar from "./components/SystemBar.vue";
 
 const isDarkTheme = ref(sessionStorage.getItem("is_dark_theme") !== "0");
@@ -22,6 +20,9 @@ const theme = computed(() => (isDarkTheme.value ? "dark" : "light"));
 const background = computed(() =>
     isDarkTheme.value ? backgroundDark : backgroundLight
 );
+const appStyle = computed(() => ({
+    background: `url(${background})`,
+}));
 function switchTheme(val: boolean) {
     isDarkTheme.value = val;
     sessionStorage.setItem("is_dark_theme", isDarkTheme.value ? "1" : "0");
