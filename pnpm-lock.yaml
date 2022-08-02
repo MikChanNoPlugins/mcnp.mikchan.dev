@@ -11,6 +11,7 @@ specifiers:
   '@types/node': ^18.6.3
   '@vitejs/plugin-vue': ^3.0.0
   animechan.js: ^1.0.1
+  highlight.js: ^11.6.0
   isomorphic-fetch: ^3.0.0
   typescript: ^4.6.4
   vite: ^3.0.0
@@ -24,6 +25,7 @@ specifiers:
 dependencies:
   '@octokit/rest': 19.0.3
   animechan.js: 1.0.1
+  highlight.js: 11.6.0
   vue: 3.2.37
   vue-i18n: 9.1.10_vue@3.2.37
   vue-router: 4.1.3_vue@3.2.37
@@ -2486,6 +2488,11 @@ packages:
     dependencies:
       function-bind: 1.1.1
     dev: true
+
+  /highlight.js/11.6.0:
+    resolution: {integrity: sha512-ig1eqDzJaB0pqEvlPVIpSSyMaO92bH1N2rJpLMN/nX396wTpDA4Eq0uK+7I/2XG17pFaaKE0kjV/XPeGt7Evjw==}
+    engines: {node: '>=12.0.0'}
+    dev: false
 
   /idb/7.0.2:
     resolution: {integrity: sha512-jjKrT1EnyZewQ/gCBb/eyiYrhGzws2FeY92Yx8qT9S9GeQAmo4JFVIiWRIfKW/6Ob9A+UDAOW9j9jn58fy2HIg==}

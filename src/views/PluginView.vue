@@ -1,19 +1,11 @@
 <template>
     <v-container>
-        <v-row v-if="data.notFound">
-            <v-col>
-                <v-alert type="error">
-                    {{ t("not-found", { pluginName }) }}
-                </v-alert>
-            </v-col>
-        </v-row>
-        <v-row v-if="!data.notFound && !data.readme">
-            <v-spacer />
-            <v-col cols="auto">
-                <v-progress-circular indeterminate />
-            </v-col>
-            <v-spacer />
-        </v-row>
+        <row-loading v-if="!data.notFound && !data.readme" />
+
+        <row-error v-if="data.notFound">
+            {{ t("not-found", { pluginName }) }}
+        </row-error>
+
         <v-row>
             <v-col>
                 <v-card v-if="!data.notFound && data.readme">
@@ -28,6 +20,8 @@
 import { useRoute } from "vue-router";
 import { useGithubRepo } from "../hooks/useGithubRepo.js";
 import { useI18n } from "../plugins/i18n";
+import RowLoading from "../components/RowLoading.vue";
+import RowError from "../components/RowError.vue";
 
 const { t } = useI18n();
 

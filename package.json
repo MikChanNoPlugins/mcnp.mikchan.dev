@@ -11,6 +11,7 @@
   "dependencies": {
     "@octokit/rest": "^19.0.3",
     "animechan.js": "^1.0.1",
+    "highlight.js": "^11.6.0",
     "vue": "^3.2.37",
     "vue-i18n": "9",
     "vue-router": "^4.1.3",
