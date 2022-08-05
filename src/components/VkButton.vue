@@ -9,5 +9,7 @@
 </template>
 
 <script setup lang="ts">
-const goToVk = () => window.open("https://vk.com/guiltyera", "_blank")?.focus();
+import { toUrl } from "../utils/toUrl";
+
+const goToVk = toUrl("https://vk.com/guiltyera");
 </script>

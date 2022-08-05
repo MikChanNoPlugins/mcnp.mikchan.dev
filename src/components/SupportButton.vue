@@ -12,12 +12,12 @@
 
 <script setup lang="ts">
 import { useI18n } from "../plugins/i18n";
+import { toUrl } from "../utils/toUrl";
 import SupportButtonIcon from "./SupportButtonIcon.vue";
 
 const { t } = useI18n();
 
-const goToBuyMeACoffee = () =>
-    window.open("https://www.buymeacoffee.com/mcnp", "_blank")?.focus();
+const goToBuyMeACoffee = toUrl("https://www.buymeacoffee.com/mcnp");
 </script>
 
 <i18n lang="yaml">

@@ -1,3 +1,9 @@
+<style scoped>
+.main {
+    min-height: 100vh;
+}
+</style>
+
 <template>
     <v-app
         :theme="theme"
@@ -7,9 +13,11 @@
     >
         <system-bar />
         <app-bar />
-        <v-main>
+        <v-main class="main">
             <router-view />
         </v-main>
+
+        <b-footer />
     </v-app>
 </template>
 
@@ -19,6 +27,7 @@ import AppBar from "./components/AppBar.vue";
 import backgroundDark from "@/assets/background-dark.jpg";
 import backgroundLight from "@/assets/background-light.jpg";
 import SystemBar from "./components/SystemBar.vue";
+import BFooter from "./components/Footer.vue";
 
 const isDarkTheme = ref(sessionStorage.getItem("is_dark_theme") !== "0");
 const theme = computed(() => (isDarkTheme.value ? "dark" : "light"));

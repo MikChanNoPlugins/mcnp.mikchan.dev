@@ -10,7 +10,7 @@
 
 <script setup lang="ts">
 import { mdiGithub } from "@mdi/js";
+import { toUrl } from "../utils/toUrl";
 
-const goToGithub = () =>
-    window.open("https://github.com/MikChanNoPlugins", "_blank")?.focus();
+const goToGithub = toUrl("https://github.com/MikChanNoPlugins");
 </script>
