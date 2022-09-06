@@ -10,7 +10,9 @@ import vuetify from "vite-plugin-vuetify";
 export default defineConfig({
     plugins: [
         vue(),
-        vuetify({ autoImport: true }),
+        vuetify({
+            autoImport: true,
+        }),
         vueI18n({
             include: path.resolve(__dirname, "./path/to/src/locales/**"),
         }),

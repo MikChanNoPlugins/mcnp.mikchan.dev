@@ -1,5 +1,7 @@
 import { createI18n, useI18n, UseI18nOptions } from "vue-i18n";
-import * as vuetifyMessages from "vuetify/locale";
+import { en, ru, uk } from "vuetify/locale";
+
+const vuetifyMessages = { en, ru, uk };
 
 const messages = Object.entries(vuetifyMessages).reduce(
     (acc, [lang, msg]) => ({ ...acc, [lang]: { $vuetify: msg } }),
