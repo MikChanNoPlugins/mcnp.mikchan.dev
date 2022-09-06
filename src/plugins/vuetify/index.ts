@@ -1,8 +1,6 @@
-import { createVuetify } from "vuetify";
-import * as components from "vuetify/components";
-import * as directives from "vuetify/directives";
-import { createVueI18nAdapter } from "vuetify/locale/adapters/vue-i18n";
 import "vuetify/styles";
+import { createVuetify } from "vuetify";
+import { createVueI18nAdapter } from "vuetify/locale/adapters/vue-i18n";
 import { i18n, useI18n } from "../i18n";
 import { aliases, mdi } from "vuetify/lib/iconsets/mdi-svg";
 import { fa } from "vuetify/lib/iconsets/fa-svg";
@@ -27,9 +25,6 @@ const vuetify = createVuetify({
             fa,
         },
     },
-
-    components,
-    directives,
 });
 
 export { vuetify };
