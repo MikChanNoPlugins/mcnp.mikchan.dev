@@ -5,7 +5,7 @@ specifiers:
   '@fortawesome/free-brands-svg-icons': ^6.2.0
   '@fortawesome/free-solid-svg-icons': ^6.2.0
   '@fortawesome/vue-fontawesome': ^3.0.1
-  '@intlify/vite-plugin-vue-i18n': ^5.0.1
+  '@intlify/vite-plugin-vue-i18n': ^6.0.3
   '@mdi/js': ^7.0.96
   '@octokit/rest': ^19.0.5
   '@types/node': ^18.11.9
@@ -40,7 +40,7 @@ devDependencies:
   '@fortawesome/free-brands-svg-icons': 6.2.0
   '@fortawesome/free-solid-svg-icons': 6.2.0
   '@fortawesome/vue-fontawesome': 3.0.1_lteq7vqmz6gtgcgatkvrcm56su
-  '@intlify/vite-plugin-vue-i18n': 5.0.1_vite@3.2.2+vue-i18n@9.2.2
+  '@intlify/vite-plugin-vue-i18n': 6.0.3_vite@3.2.2+vue-i18n@9.2.2
   '@mdi/js': 7.0.96
   '@types/node': 18.11.9
   '@vitejs/plugin-vue': 3.2.0_vite@3.2.2+vue@3.2.41
@@ -1221,8 +1221,8 @@ packages:
     engines: {node: '>= 14'}
     dev: true
 
-  /@intlify/vite-plugin-vue-i18n/5.0.1_vite@3.2.2+vue-i18n@9.2.2:
-    resolution: {integrity: sha512-+LAUdm5PxGtLrUYgD2Wg9SINmLmhZqrcTnzccfqopca5NvaXWOPnQR4cQOkn82qLuyjWdCYC1BoqMHWBWX/MyQ==}
+  /@intlify/vite-plugin-vue-i18n/6.0.3_vite@3.2.2+vue-i18n@9.2.2:
+    resolution: {integrity: sha512-6SgNzPAOCR90wvt368lKzi7f/5ZEWJn22UCGvhFsP3XvKqlF3cVzojahgQ6o+LTdCkExeM6wPgd+haFf28E9VQ==}
     engines: {node: '>= 14.6'}
     peerDependencies:
       petite-vue-i18n: '*'
