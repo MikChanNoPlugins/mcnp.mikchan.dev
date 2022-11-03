@@ -20,6 +20,7 @@
 
             <v-list-item
                 v-for="locale in availableLocales"
+                link
                 :key="`locale_${locale}`"
                 :active="globalLocale === locale"
                 @click="setLocale(locale)"

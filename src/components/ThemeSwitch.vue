@@ -19,6 +19,7 @@
             <v-divider />
 
             <v-list-item
+                link
                 @click="switchTheme(false)"
                 :prepend-icon="mdiWhiteBalanceSunny"
                 :active="!isDarkTheme"
@@ -27,6 +28,7 @@
             </v-list-item>
 
             <v-list-item
+                link
                 @click="switchTheme(true)"
                 :prepend-icon="mdiWeatherNight"
                 :active="isDarkTheme"
