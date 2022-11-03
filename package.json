@@ -1,37 +1,37 @@
 {
-  "name": "MikChanのPlugins",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@octokit/rest": "^19.0.3",
-    "animechan.js": "^1.0.1",
-    "highlight.js": "^11.6.0",
-    "vite-plugin-vuetify": "1.0.0-alpha.16",
-    "vue": "^3.2.37",
-    "vue-i18n": "9",
-    "vue-router": "^4.1.3",
-    "vuetify": "3.0.0-beta.6",
-    "workbox-build": "^6.5.4"
-  },
-  "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.1.2",
-    "@fortawesome/free-brands-svg-icons": "^6.1.2",
-    "@fortawesome/free-solid-svg-icons": "^6.1.2",
-    "@fortawesome/vue-fontawesome": "^3.0.1",
-    "@intlify/vite-plugin-vue-i18n": "^5.0.1",
-    "@mdi/js": "^7.0.96",
-    "@types/node": "^18.6.3",
-    "@vitejs/plugin-vue": "^3.0.0",
-    "isomorphic-fetch": "^3.0.0",
-    "typescript": "^4.6.4",
-    "vite": "^3.0.0",
-    "vite-plugin-pwa": "^0.12.3",
-    "vue-tsc": "^0.38.4"
-  }
+    "name": "MikChanのPlugins",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc --noEmit && vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@octokit/rest": "^19.0.5",
+        "animechan.js": "^1.0.1",
+        "highlight.js": "^11.6.0",
+        "vite-plugin-vuetify": "1.0.0",
+        "vue": "^3.2.41",
+        "vue-i18n": "^9.2.2",
+        "vue-router": "^4.1.6",
+        "vuetify": "3.0.0",
+        "workbox-build": "^6.5.4"
+    },
+    "devDependencies": {
+        "@fortawesome/fontawesome-svg-core": "^6.2.0",
+        "@fortawesome/free-brands-svg-icons": "^6.2.0",
+        "@fortawesome/free-solid-svg-icons": "^6.2.0",
+        "@fortawesome/vue-fontawesome": "^3.0.1",
+        "@intlify/vite-plugin-vue-i18n": "^5.0.1",
+        "@mdi/js": "^7.0.96",
+        "@types/node": "^18.11.9",
+        "@vitejs/plugin-vue": "^3.2.0",
+        "isomorphic-fetch": "^3.0.0",
+        "typescript": "^4.8.4",
+        "vite": "^3.2.2",
+        "vite-plugin-pwa": "^0.13.1",
+        "vue-tsc": "^1.0.9"
+    }
 }
