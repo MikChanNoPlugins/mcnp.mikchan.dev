@@ -10,7 +10,6 @@
     },
     "dependencies": {
         "@octokit/rest": "^19.0.5",
-        "animechan.js": "^1.0.1",
         "highlight.js": "^11.6.0",
         "vite-plugin-vuetify": "1.0.0",
         "vue": "^3.2.41",
