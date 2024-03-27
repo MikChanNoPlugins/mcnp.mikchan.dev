@@ -17,6 +17,24 @@
                         src="https://api.mcbanners.com/banner/saved/RVNJcDSJaLUenQ.png"
                     />
                 </v-col>
+                <v-col cols="auto">
+                    <v-img
+                        class="clickable"
+                        @click="onBannerClick"
+                        width="300px"
+                        height="100px"
+                        src="https://api.mcbanners.com/banner/saved/WbVGDQsrgTulAV.png"
+                    />
+                </v-col>
+                <v-col cols="auto">
+                    <v-img
+                        class="clickable"
+                        @click="onBannerClick"
+                        width="300px"
+                        height="100px"
+                        src="https://api.mcbanners.com/banner/saved/ipbDHEUHBVzvAb.png"
+                    />
+                </v-col>
             </v-row>
 
             <v-divider class="my-4" />
